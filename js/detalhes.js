@@ -6,7 +6,7 @@ let divDetalhes = document.getElementById('detalhes')
 let voltar = document.getElementById('voltar')
 
 voltar.addEventListener('click', () => {
-    window.location.href = '../'
+    window.location.href = './index.html'
 }
 )
 
@@ -14,16 +14,15 @@ function informacoes () {
 
     divDetalhes.innerHTML = `
 
-        <img src = "${localStorage.getItem('@Imagem')}
+        <img src = "${localStorage.getItem('@Imagem')}">
         <h1> ${localStorage.getItem('@Nome')} </h1>
         <h1> ${localStorage.getItem('@Posicao')} </h1> 
 
+        <strong> Nome Completo: </strong> <p> ${localStorage.getItem('@NomeCompleto')} </p>
+        <strong> Data de Nascimento: </strong> <p> ${localStorage.getItem('@Nascimento')} </p>
+        <strong> Altura: </strong> <p> ${localStorage.getItem('@Altura')} </p>
+
         <p> ${localStorage.getItem('@Descricao')} </p>
 
-        <strong> Nome Completo: </strong> <span> ${localStorage.getItem('@NomeCompleto')} </span>
-        <strong> Data de Nascimento: </strong> <span> ${localStorage.getItem('@Nascimento')} </span>
-        <strong> Altura: </strong> <span> ${localStorage.getItem('@Altura')} </span>
-
-    `;
-
+        `;
 }

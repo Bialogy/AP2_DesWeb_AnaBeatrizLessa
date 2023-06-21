@@ -2,16 +2,16 @@ window.onload = () => {
     abrirJogador()
 }
 
-let feminino = document.getElementById('feminino')
-let masculino = document.getElementById('masculino')
+let efeminino = document.getElementById('efeminino')
+let emasculino = document.getElementById('emasculino')
 
 const abrirJogador = () => {
-    jogadores.forEach((jogador, i) => {
+    jogadores.forEach((jogador, indice) => {
         if(jogador ["elenco"] == "feminino") {
-            feminino.innerHTML += `
+            efeminino.innerHTML += `
             
-            <div id = "jogador${i}" onclick = "infoJogador(${i})">
-                <h1> ${jogador ["nome"] } </h1>
+            <div id = "jogador${indice}" onclick = "infoJogador(${indice})">
+                <h2> ${jogador ["nome"] } </h2>
                 <img src = "${jogador ["imagem"]}">
             </div>
 
@@ -19,10 +19,10 @@ const abrirJogador = () => {
         }
 
         else {
-            masculino.innerHTML += `
+            emasculino.innerHTML += `
             
-            <div id = "jogador${i}" onclick = "infoJogador(${i})">
-                <h1> ${jogador ["nome"] } </h1>
+            <div id = "jogador${indice}" onclick = "infoJogador(${indice})">
+                <h2> ${jogador ["nome"] } </h2>
                 <img src = "${jogador ["imagem"]}">
             </div>
             
@@ -31,18 +31,18 @@ const abrirJogador = () => {
     })
 }
 
-function infoJogador(iJogador) {
+function infoJogador(indiceJogador) {
 
-    const jogador = jogadores[iJogador];
+    const jogador = jogadores[indiceJogador];
     console.log('falhou')
 
-    localStorage('@Nome', jogador.nome)
-    localStorage('@Imagem', jogador.imagem)
-    localStorage('@Posicao', jogador.posicao)
-    localStorage('@Descricao', jogador.descricao)
-    localStorage('@NomeCompleto', jogador.nome_completo)
-    localStorage('@Nascimento', jogador.nascimento)
-    localStorage('@Altura', jogador.altura)
+    localStorage.setItem('@Nome', jogador.nome)
+    localStorage.setItem('@Imagem', jogador.imagem)
+    localStorage.setItem('@Posicao', jogador.posicao)
+    localStorage.setItem('@Descricao', jogador.descricao)
+    localStorage.setItem('@NomeCompleto', jogador.nome_completo)
+    localStorage.setItem('@Nascimento', jogador.nascimento)
+    localStorage.setItem('@Altura', jogador.altura)
 
     window.location.href = './detalhes.html'
 
